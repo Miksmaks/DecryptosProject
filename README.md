@@ -1,2 +1,1 @@
-# DecryptosProject
- Выпускная квалификационная работа
+# PracticProject3
