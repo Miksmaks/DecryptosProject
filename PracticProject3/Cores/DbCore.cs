@@ -350,7 +350,7 @@ namespace PracticProject3.Cores
 	            [SecondName] NVARCHAR(30) NOT NULL,
 	            [ThirdName] NVARCHAR(30) NOT NULL,
 	            [Login] NVARCHAR(50) NOT NULL UNIQUE,
-                [Password] NVARCHAR(50) NOT NULL,
+                [Password] NVARCHAR(120) NOT NULL,
 	            [PermissionId] INT NOT NULL,
                 [Status] NVARCHAR(15) NOT NULL
 	            )
@@ -511,7 +511,7 @@ namespace PracticProject3.Cores
             cWrite.Parameters.Add(new SqlParameter("@secondName", SecondName));
             cWrite.Parameters.Add(new SqlParameter("@thirdName", ThirdName));
             cWrite.Parameters.Add(new SqlParameter("@login", Login));
-            cWrite.Parameters.Add(new SqlParameter("@password", Password));
+            cWrite.Parameters.Add(new SqlParameter("@password", Settings.ToHashSHA256(Password)));
             cWrite.Parameters.Add(new SqlParameter("@permId", PermId));
             await cWrite.ExecuteNonQueryAsync();
             //ConnectLine.Close();
