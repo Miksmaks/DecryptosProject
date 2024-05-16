@@ -288,7 +288,7 @@ namespace PracticProject3.Cores
 	            Id INT PRIMARY KEY IDENTITY(1,1),
 	            SysPath NVARCHAR(256) NOT NULL,
                 SysType NVARCHAR(5) NOT NULL,
-                SysHash NVARCHAR(35) NOT NULL UNIQUE,
+                SysHash NVARCHAR(120) NOT NULL UNIQUE,
                 DocNum NVARCHAR(50) NOT NULL,
                 CompanyId INT NOT NULL,
                 DocTypeId INT NOT NULL,
